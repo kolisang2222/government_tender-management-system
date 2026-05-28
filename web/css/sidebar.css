@@ -1,0 +1,422 @@
+/* ============================================================
+   PROCUREGOV SIDEBAR STYLES
+   Ministry of Public Works, Kingdom of Lesotho
+   ============================================================ */
+
+:root {
+    --primary-blue: #00529B;
+    --primary-dark: #003d73;
+    --primary-light: #e6f0fa;
+    --lesotho-green: #009A44;
+    --lesotho-white: #FFFFFF;
+    --text-dark: #1a1a2e;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --border-light: #e2e8f0;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --success-green: #28a745;
+    --warning-orange: #ffc107;
+    --danger-red: #dc3545;
+}
+
+/* ============================================================
+   SIDEBAR CONTAINER
+   ============================================================ */
+aside {
+    width: 300px;
+    background: var(--lesotho-white);
+    border-right: 1px solid var(--border-light);
+    padding: 24px 0;
+    overflow-y: auto;
+    height: calc(100vh - 64px);
+    position: sticky;
+    top: 64px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--text-muted) var(--border-light);
+}
+
+aside::-webkit-scrollbar {
+    width: 6px;
+}
+
+aside::-webkit-scrollbar-track {
+    background: var(--border-light);
+}
+
+aside::-webkit-scrollbar-thumb {
+    background: var(--text-muted);
+    border-radius: 3px;
+}
+
+aside::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+/* ============================================================
+   SIDEBAR SECTIONS
+   ============================================================ */
+aside > div {
+    padding: 20px 20px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+aside > div:last-child {
+    border-bottom: none;
+}
+
+/* ============================================================
+   SECTION HEADERS
+   ============================================================ */
+aside h4 {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin: 0 0 16px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+/* ============================================================
+   QUICK STATS (Supplier)
+   ============================================================ */
+aside > div:first-child > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+aside > div:first-child > div:nth-child(2) > div {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    transition: all 0.2s ease;
+}
+
+aside > div:first-child > div:nth-child(2) > div:hover {
+    background: var(--lesotho-white);
+    box-shadow: var(--shadow-sm);
+    border-color: var(--primary-blue);
+}
+
+aside > div:first-child > div:nth-child(2) > div > span:first-child {
+    font-size: 28px;
+    width: 40px;
+    text-align: center;
+}
+
+aside > div:first-child > div:nth-child(2) > div > div {
+    display: flex;
+    flex-direction: column;
+}
+
+aside > div:first-child > div:nth-child(2) > div > div span:first-child {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 2px;
+}
+
+aside > div:first-child > div:nth-child(2) > div > div span:last-child {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* ============================================================
+   LISTS (Upcoming Deadlines, Notifications, Assignments)
+   ============================================================ */
+aside ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+aside ul li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+aside ul li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+aside ul li strong {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-family: 'Courier New', monospace;
+}
+
+aside ul li span {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+aside ul li small {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-top: 4px;
+}
+
+/* ============================================================
+   QUICK ACTIONS (Officer)
+   ============================================================ */
+aside ul li a {
+    display: block;
+    padding: 10px 14px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    background: #f8fafc;
+    border: 1px solid var(--border-light);
+    margin-bottom: 6px;
+}
+
+aside ul li a:hover {
+    background: var(--primary-blue);
+    color: var(--lesotho-white);
+    border-color: var(--primary-blue);
+    transform: translateX(2px);
+}
+
+aside ul li:last-child a {
+    margin-bottom: 0;
+}
+
+/* ============================================================
+   TENDER SUMMARY (Officer)
+   ============================================================ */
+aside > div:last-child > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+aside > div:last-child > div > div > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border-light);
+}
+
+aside > div:last-child > div > div:last-child > div {
+    border-bottom: none;
+}
+
+aside > div:last-child > div > div > div span:first-child {
+    font-size: 13px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+aside > div:last-child > div > div > div span:first-child::before {
+    content: '•';
+    color: var(--primary-blue);
+    font-size: 16px;
+}
+
+aside > div:last-child > div > div > div span:last-child {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* ============================================================
+   EVALUATION PROGRESS (Evaluator)
+   ============================================================ */
+aside > div:nth-child(2) > div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+aside > div:nth-child(2) > div > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+aside > div:nth-child(2) > div > div:last-child {
+    border-bottom: none;
+}
+
+aside > div:nth-child(2) > div > div span:first-child {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+aside > div:nth-child(2) > div > div span:last-child {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+/* ============================================================
+   COMPLETED/PENDING BADGES
+   ============================================================ */
+aside ul li span:last-child {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-top: 6px;
+    align-self: flex-start;
+}
+
+aside ul li span:last-child:contains("Completed") {
+    background: #d4edda;
+    color: #155724;
+}
+
+aside ul li span:last-child:contains("Pending") {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* Custom badge classes */
+.status-completed {
+    background: #d4edda;
+    color: #155724;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.status-pending {
+    background: #fff3cd;
+    color: #856404;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* ============================================================
+   EMPTY STATES
+   ============================================================ */
+aside p {
+    color: var(--text-muted);
+    font-size: 13px;
+    font-style: italic;
+    text-align: center;
+    padding: 16px;
+    margin: 0;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+aside > div {
+    animation: slideIn 0.3s ease;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+@media (max-width: 1024px) {
+    aside {
+        width: 260px;
+    }
+
+    aside > div {
+        padding: 16px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    aside {
+        width: 100%;
+        height: auto;
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+        padding: 16px;
+    }
+
+    aside > div:first-child > div:nth-child(2) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    aside > div:first-child > div:nth-child(2) > div {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+
+    aside > div:first-child > div:nth-child(2) > div > span:first-child {
+        font-size: 24px;
+    }
+
+    aside > div:first-child > div:nth-child(2) > div > div span:last-child {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    aside > div:first-child > div:nth-child(2) {
+        grid-template-columns: 1fr;
+    }
+
+    aside > div:first-child > div:nth-child(2) > div {
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+    aside {
+        display: none;
+    }
+}
+
+/* ============================================================
+   CUSTOM SCROLLBAR FOR FIREFOX
+   ============================================================ */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--text-muted) var(--border-light);
+}

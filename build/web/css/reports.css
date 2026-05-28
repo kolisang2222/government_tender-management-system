@@ -1,0 +1,700 @@
+/* ============================================================
+   PROCUREGOV REPORTS STYLES
+   Ministry of Public Works, Kingdom of Lesotho
+   ============================================================ */
+
+:root {
+    --primary-blue: #00529B;
+    --primary-dark: #003d73;
+    --primary-light: #e6f0fa;
+    --lesotho-green: #009A44;
+    --lesotho-white: #FFFFFF;
+    --text-dark: #1a1a2e;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --border-light: #e2e8f0;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --success-green: #28a745;
+    --warning-orange: #ffc107;
+    --danger-red: #dc3545;
+    --info-blue: #17a2b8;
+}
+
+/* ============================================================
+   REPORT TABS
+   ============================================================ */
+.report-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 28px;
+    border-bottom: 2px solid var(--border-light);
+    padding-bottom: 2px;
+    flex-wrap: wrap;
+}
+
+.tab-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 10px 10px 0 0;
+    transition: all 0.2s ease;
+    position: relative;
+    background: transparent;
+}
+
+.tab-link:hover {
+    background: #f8fafc;
+    color: var(--primary-blue);
+}
+
+.tab-link.active {
+    color: var(--primary-blue);
+    background: var(--lesotho-white);
+    border: 1px solid var(--border-light);
+    border-bottom-color: var(--lesotho-white);
+    margin-bottom: -2px;
+}
+
+.tab-link.active::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--primary-blue);
+    border-radius: 3px 3px 0 0;
+}
+
+/* ============================================================
+   TAB CONTENT
+   ============================================================ */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   FILTER SECTION
+   ============================================================ */
+.filter-section {
+    background: #f8fafc;
+    padding: 20px 24px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border-light);
+}
+
+.filter-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 160px;
+}
+
+.filter-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.filter-group select,
+.filter-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid var(--border-light);
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--text-dark);
+    background: var(--lesotho-white);
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.filter-group select:hover,
+.filter-group input:hover {
+    border-color: #cbd5e0;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 82, 155, 0.1);
+}
+
+.filter-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* ============================================================
+   SUMMARY CARDS
+   ============================================================ */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.summary-cards.small {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.summary-card {
+    background: var(--lesotho-white);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.2s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-blue);
+}
+
+.card-icon {
+    font-size: 32px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8fafc, #eef2f6);
+    border-radius: 14px;
+    flex-shrink: 0;
+}
+
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    line-height: 1.2;
+}
+
+.card-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+/* ============================================================
+   CHART SECTIONS
+   ============================================================ */
+.chart-section {
+    background: var(--lesotho-white);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+}
+
+.chart-section h3 {
+    margin: 0 0 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border-light);
+}
+
+.chart-section h3::before {
+    content: '▎';
+    color: var(--primary-blue);
+    font-size: 20px;
+}
+
+.chart-container {
+    overflow-x: auto;
+}
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+.table-container {
+    overflow-x: auto;
+    border-radius: 12px;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.report-table thead {
+    background: linear-gradient(to right, #fafbfc, var(--lesotho-white));
+    border-bottom: 2px solid var(--border-light);
+}
+
+.report-table th {
+    padding: 16px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.report-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.report-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.report-table tbody tr:hover {
+    background: #fafbfc;
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.stats-table thead {
+    background: #f8fafc;
+}
+
+.stats-table th {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--border-light);
+}
+
+.stats-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+/* ============================================================
+   STATUS BADGES
+   ============================================================ */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-draft {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.status-open {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-closed {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-awarded {
+    background: #d4edda;
+    color: #155724;
+    font-weight: 700;
+}
+
+.status-under_evaluation {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.status-evaluated {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+/* ============================================================
+   VARIANCE COLORS
+   ============================================================ */
+.positive {
+    color: var(--success-green);
+    font-weight: 600;
+}
+
+.negative {
+    color: var(--danger-red);
+    font-weight: 600;
+}
+
+/* ============================================================
+   EMPTY STATES
+   ============================================================ */
+.empty-state {
+    text-align: center;
+    padding: 48px 24px;
+    background: var(--lesotho-white);
+    border-radius: 16px;
+    border: 1px solid var(--border-light);
+}
+
+.empty-state p {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin: 0;
+}
+
+.no-data {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: var(--primary-blue);
+    color: var(--lesotho-white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 82, 155, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--border-light);
+    color: var(--text-secondary);
+}
+
+.btn-outline:hover {
+    background: #f8fafc;
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.btn-secondary {
+    background: #e9ecef;
+    color: var(--text-secondary);
+}
+
+.btn-secondary:hover {
+    background: #dee2e6;
+}
+
+/* ============================================================
+   ALERTS
+   ============================================================ */
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.close-alert {
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.6;
+    color: inherit;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-alert:hover {
+    opacity: 1;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+@media (max-width: 1200px) {
+    .summary-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .summary-cards.small {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .report-tabs {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .tab-link {
+        border-radius: 8px;
+        border: 1px solid var(--border-light);
+        margin-bottom: 4px;
+    }
+
+    .tab-link.active {
+        margin-bottom: 0;
+    }
+
+    .tab-link.active::before {
+        display: none;
+    }
+
+    .filter-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    .filter-actions {
+        width: 100%;
+    }
+
+    .filter-actions .btn {
+        flex: 1;
+    }
+
+    .summary-cards,
+    .summary-cards.small {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .header-right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-right .btn {
+        width: 100%;
+    }
+
+    .report-table,
+    .stats-table {
+        min-width: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chart-section {
+        padding: 16px;
+    }
+
+    .summary-card {
+        padding: 18px;
+    }
+
+    .card-value {
+        font-size: 24px;
+    }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+    .report-tabs,
+    .filter-section,
+    .header-right,
+    .alert,
+    .btn {
+        display: none !important;
+    }
+
+    .tab-content {
+        display: block !important;
+    }
+
+    .summary-card,
+    .chart-section {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+    }
+
+    .report-table th {
+        background: #f0f0f0 !important;
+    }
+    /* ============================================================
+   PRINT STYLES
+   ============================================================ */
+    @media print {
+        /* Hide non-essential elements */
+        .report-tabs,
+        .filter-section,
+        .header-right,
+        .alert,
+        .btn,
+        .sidebar,
+        nav,
+        footer,
+        .close-alert {
+            display: none !important;
+        }
+
+        /* Show all tab content */
+        .tab-content {
+            display: block !important;
+        }
+
+        /* Remove backgrounds and shadows */
+        .summary-card,
+        .chart-section,
+        .dashboard-card {
+            box-shadow: none;
+            border: 1px solid #ccc;
+            background: white;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        /* Ensure text is black */
+        body, h1, h2, h3, h4, h5, h6, p, span, td, th {
+            color: black !important;
+        }
+
+        /* Table headers with background */
+        .report-table th,
+        .stats-table th {
+            background: #f0f0f0 !important;
+            color: black !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* Status badges keep colors */
+        .status-badge {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* Add page breaks */
+        .chart-section {
+            page-break-inside: avoid;
+        }
+
+        h3 {
+            page-break-after: avoid;
+        }
+
+        /* Show URLs for links */
+        a[href]:after {
+            content: " (" attr(href) ")";
+            font-size: 10px;
+            color: #666;
+        }
+    }
+}

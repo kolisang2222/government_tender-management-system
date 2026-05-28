@@ -1,0 +1,170 @@
+/* --- ERROR PAGE FOUNDATION --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7fafc;
+    color: #2d3748;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+main {
+    width: 100%;
+    max-width: 650px;
+    padding: 20px;
+    animation: slideUp 0.5s ease-out;
+}
+
+/* The Main Error Card */
+main > div {
+    background: white;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-top: 6px solid #e53e3e; /* Default Error Red */
+}
+
+/* --- THE ERROR CODE & ICON --- */
+main > div > div:first-child {
+    margin-bottom: 30px;
+}
+
+main span:first-child {
+    display: block;
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1;
+    color: #cbd5e0;
+    margin-bottom: 10px;
+}
+
+/* Custom colors based on common status codes */
+/* (Note: These apply if you add these classes to your span or div) */
+.code-404 { color: #3182ce; }
+.code-403 { color: #dd6b20; }
+.code-500 { color: #e53e3e; }
+
+main h3 {
+    font-size: 28px;
+    margin: 0;
+    color: #1a202c;
+}
+
+/* --- CONTENT & LISTS --- */
+main p {
+    line-height: 1.6;
+    color: #4a5568;
+    margin: 15px 0;
+}
+
+main ul {
+    text-align: left;
+    display: inline-block;
+    margin: 10px 0;
+    padding-left: 20px;
+    color: #718096;
+    font-size: 14px;
+}
+
+main li {
+    margin-bottom: 8px;
+}
+
+code {
+    background: #edf2f7;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: #c53030;
+}
+
+/* --- ACTION BUTTONS/LINKS --- */
+main a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #001489; /* Navy Blue */
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin: 10px 5px;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+main a:hover {
+    background-color: #000c54;
+    transform: translateY(-2px);
+}
+
+/* Secondary link style for "Go Back" */
+main a[href*="history.back"] {
+    background-color: #edf2f7;
+    color: #2d3748;
+}
+
+main a[href*="history.back"]:hover {
+    background-color: #e2e8f0;
+}
+
+/* --- TECHNICAL DETAILS (500 Error) --- */
+details {
+    margin-top: 30px;
+    text-align: left;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+summary {
+    padding: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    background: #edf2f7;
+    user-select: none;
+}
+
+details > div {
+    padding: 15px;
+}
+
+pre {
+    background: #1a202c;
+    color: #68d391;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 12px;
+    overflow-x: auto;
+    max-height: 200px;
+    text-align: left;
+}
+
+/* --- FOOTER CONTACT INFO --- */
+main > div > div:last-child {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #edf2f7;
+    font-size: 13px;
+    color: #a0aec0;
+}
+
+/* Animation */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    main > div { padding: 30px 20px; }
+    main a { width: 100%; margin: 5px 0; }
+}

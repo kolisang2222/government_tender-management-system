@@ -1,0 +1,453 @@
+/* ============================================================
+   PROCUREGOV SUPPLIER DASHBOARD STYLES
+   Ministry of Public Works, Kingdom of Lesotho
+   Theme: Supplier (Green Accent)
+   ============================================================ */
+
+:root {
+    --primary-blue: #00529B;
+    --primary-dark: #003d73;
+    --primary-light: #e6f0fa;
+    --supplier-green: #009A44;
+    --supplier-dark: #006b30;
+    --supplier-light: #e6f5eb;
+    --lesotho-white: #FFFFFF;
+    --text-dark: #1a1a2e;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --border-light: #e2e8f0;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --success-green: #28a745;
+    --warning-orange: #ffc107;
+    --danger-red: #dc3545;
+    --info-blue: #17a2b8;
+    --gold: #ffd700;
+}
+
+/* ============================================================
+   STATS CARDS (Green Theme for Suppliers)
+   ============================================================ */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.stat-card {
+    background: var(--lesotho-white);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--supplier-green);
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--supplier-green);
+}
+
+.stat-value {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--supplier-green);
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+/* ============================================================
+   DASHBOARD GRID
+   ============================================================ */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+/* ============================================================
+   DASHBOARD CARDS
+   ============================================================ */
+.dashboard-card {
+    background: var(--lesotho-white);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.dashboard-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.dashboard-card.full-width {
+    grid-column: span 2;
+}
+
+.card-header {
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-light);
+    background: linear-gradient(to right, #f8fcf9, var(--lesotho-white));
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-header h3::before {
+    content: '▎';
+    color: var(--supplier-green);
+    font-size: 18px;
+}
+
+.view-all {
+    font-size: 13px;
+    color: var(--supplier-green);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.view-all:hover {
+    color: var(--supplier-dark);
+    text-decoration: underline;
+}
+
+.card-body {
+    padding: 8px 0;
+}
+
+/* ============================================================
+   DATA TABLE
+   ============================================================ */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th {
+    text-align: left;
+    padding: 14px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--border-light);
+    background: #fafbfc;
+}
+
+.data-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.data-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+    background: #f8fcf9;
+}
+
+/* ============================================================
+   STATUS BADGES
+   ============================================================ */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-draft {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.status-open {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-closed {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-under_evaluation {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.status-evaluated {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.status-awarded {
+    background: #d4edda;
+    color: #155724;
+    font-weight: 700;
+}
+
+/* ============================================================
+   BADGES (Won/Not Awarded)
+   ============================================================ */
+.badge-success {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--supplier-green);
+    color: var(--lesotho-white);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-secondary {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #e9ecef;
+    color: var(--text-secondary);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ============================================================
+   ACTION BUTTONS
+   ============================================================ */
+.btn-action {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--supplier-green);
+    color: var(--lesotho-white);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-action:hover {
+    background: var(--supplier-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 154, 68, 0.2);
+}
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+.empty-state {
+    text-align: center;
+    padding: 32px 20px;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* ============================================================
+   ALERTS
+   ============================================================ */
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.close-alert {
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.6;
+    color: inherit;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.close-alert:hover {
+    opacity: 1;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+@media (max-width: 1024px) {
+    .stats-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-card.full-width {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .stat-card {
+        padding: 18px;
+    }
+
+    .stat-value {
+        font-size: 36px;
+    }
+
+    .card-header {
+        padding: 14px 18px;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 12px 14px;
+    }
+
+    .data-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-value {
+        font-size: 32px;
+    }
+
+    .card-header h3 {
+        font-size: 14px;
+    }
+
+    .view-all {
+        font-size: 12px;
+    }
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.dashboard-card {
+    animation: fadeIn 0.4s ease;
+}
+
+.stat-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.stat-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.stat-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+    .view-all,
+    .btn-action,
+    .alert,
+    .close-alert {
+        display: none !important;
+    }
+
+    .dashboard-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+    }
+
+    .stat-card {
+        border: 1px solid #ccc;
+    }
+}

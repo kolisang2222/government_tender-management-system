@@ -1,0 +1,325 @@
+/* ============================================================
+   PROCUREGOV FOOTER STYLES
+   Ministry of Public Works, Kingdom of Lesotho
+   ============================================================ */
+
+:root {
+    --primary-blue: #00529B;
+    --primary-dark: #003d73;
+    --primary-light: #e6f0fa;
+    --lesotho-green: #009A44;
+    --lesotho-white: #FFFFFF;
+    --text-dark: #1a1a2e;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --border-light: #e2e8f0;
+    --footer-bg: #1a202c;
+    --footer-text: #e2e8f0;
+    --footer-text-muted: #a0aec0;
+    --footer-border: #2d3748;
+}
+
+/* ============================================================
+   FOOTER FOUNDATION
+   ============================================================ */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 50px 0 25px 0;
+    margin-top: auto;
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    border-top: 4px solid var(--lesotho-green);
+    position: relative;
+}
+
+/* Lesotho flag stripe effect at top */
+footer::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--lesotho-green) 0%,
+        var(--lesotho-green) 33%,
+        var(--lesotho-white) 33%,
+        var(--lesotho-white) 66%,
+        var(--primary-blue) 66%,
+        var(--primary-blue) 100%
+        );
+}
+
+/* Container */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ============================================================
+   FOOTER COLUMNS
+   ============================================================ */
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column {
+    min-width: 200px;
+}
+
+/* Column Headings */
+.footer-column h4 {
+    color: var(--lesotho-white);
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+/* Underline for headings */
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--primary-blue);
+    border-radius: 2px;
+}
+
+/* ============================================================
+   TEXT AND LINKS
+   ============================================================ */
+.footer-column p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 8px 0;
+    color: var(--footer-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-icon {
+    font-size: 16px;
+    width: 24px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: var(--footer-text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.footer-column ul li a::before {
+    content: '→';
+    position: absolute;
+    left: -18px;
+    opacity: 0;
+    transition: all 0.2s ease;
+    color: var(--primary-blue);
+}
+
+.footer-column ul li a:hover {
+    color: var(--lesotho-white);
+    padding-left: 20px;
+}
+
+.footer-column ul li a:hover::before {
+    opacity: 1;
+    left: 0;
+}
+
+/* ============================================================
+   FOOTER BOTTOM (Copyright & Warning)
+   ============================================================ */
+.footer-bottom {
+    border-top: 1px solid var(--footer-border);
+    padding-top: 30px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 8px 0;
+}
+
+.footer-bottom p:first-child {
+    font-weight: 600;
+    color: var(--lesotho-white);
+    font-size: 14px;
+}
+
+.footer-warning small {
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* ============================================================
+   SOCIAL LINKS (Optional)
+   ============================================================ */
+.footer-social {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    color: var(--footer-text);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid var(--footer-border);
+}
+
+.footer-social a:hover {
+    background: var(--primary-blue);
+    color: var(--lesotho-white);
+    border-color: var(--primary-blue);
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer-column {
+    animation: fadeInUp 0.4s ease;
+}
+
+.footer-column:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.footer-column:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.footer-column:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.footer-column:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+@media (max-width: 1024px) {
+    .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 40px 0 20px 0;
+    }
+
+    .footer-columns {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+    }
+
+    .footer-column p {
+        justify-content: center;
+    }
+
+    .footer-column ul li a:hover {
+        padding-left: 0;
+    }
+
+    .footer-column ul li a::before {
+        display: none;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 0 16px;
+    }
+
+    .footer-column h4 {
+        font-size: 16px;
+    }
+
+    .footer-bottom p:first-child {
+        font-size: 12px;
+    }
+
+    .footer-warning small {
+        font-size: 11px;
+    }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+    footer {
+        background: none;
+        color: #000;
+        border-top: 1px solid #ccc;
+    }
+
+    footer a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .footer-social {
+        display: none;
+    }
+}

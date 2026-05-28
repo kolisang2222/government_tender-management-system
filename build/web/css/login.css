@@ -1,0 +1,578 @@
+/* ============================================================
+   PROCUREGOV — LOGIN PAGE STYLES
+   Ministry of Public Works, Kingdom of Lesotho
+   Premium Authentication Design
+   ============================================================ */
+
+/* ============================= */
+/* CSS VARIABLES */
+/* ============================= */
+:root {
+    --lesotho-blue: #00529B;
+    --lesotho-blue-dark: #003d73;
+    --lesotho-blue-light: #e6f0fa;
+    --lesotho-green: #009A44;
+    --lesotho-white: #FFFFFF;
+    --text-dark: #1a1a2e;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --border-light: #e2e8f0;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 30px 60px rgba(0, 0, 0, 0.2);
+    --success: #28a745;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ============================= */
+/* BASE STYLES */
+/* ============================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background: linear-gradient(135deg, #1a2a1a 0%, #0f172a 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Background Pattern */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 80%, rgba(0, 154, 68, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 82, 155, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Lesotho Flag Stripe */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg,
+        var(--lesotho-green) 0%, var(--lesotho-green) 33%,
+        var(--lesotho-white) 33%, var(--lesotho-white) 66%,
+        var(--lesotho-blue) 66%, var(--lesotho-blue) 100%);
+    z-index: 10;
+}
+
+/* ============================= */
+/* MAIN LAYOUT */
+/* ============================= */
+main {
+    display: flex;
+    max-width: 1100px;
+    width: 95%;
+    margin: 24px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================= */
+/* LOGIN CARD (LEFT SIDE) */
+/* ============================= */
+.login-card {
+    flex: 1.2;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 48px 44px;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-card::before {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(0, 154, 68, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.card-header {
+    margin-bottom: 36px;
+}
+
+.card-header h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+    position: relative;
+}
+
+.card-header h3::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--lesotho-blue), var(--lesotho-green));
+    border-radius: 2px;
+}
+
+.card-header p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-top: 20px;
+}
+
+/* ============================= */
+/* ALERTS */
+/* ============================= */
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    animation: slideDown 0.3s ease;
+    border-left: 4px solid;
+    position: relative;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border-left-color: var(--success);
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    border-left-color: var(--danger);
+}
+
+.alert-warning {
+    background: #fff3cd;
+    color: #856404;
+    border-left-color: var(--warning);
+}
+
+.alert span:first-child {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.alert span:last-child {
+    flex: 1;
+}
+
+.close-alert {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: inherit;
+    opacity: 0.6;
+    padding: 0 4px;
+    transition: opacity 0.2s;
+    line-height: 1;
+}
+
+.close-alert:hover {
+    opacity: 1;
+}
+
+/* ============================= */
+/* FORM STYLES */
+/* ============================= */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    font-size: 16px;
+    color: var(--text-muted);
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 15px 16px 15px 48px;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    color: var(--text-dark);
+    background: #f8fafc;
+    border: 2px solid var(--border-light);
+    border-radius: 14px;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.input-wrapper input:hover {
+    background: #ffffff;
+    border-color: #cbd5e0;
+}
+
+.input-wrapper input:focus {
+    background: #ffffff;
+    border-color: var(--lesotho-blue);
+    box-shadow: 0 0 0 4px rgba(0, 82, 155, 0.1);
+}
+
+.input-wrapper input::placeholder {
+    color: var(--text-muted);
+    font-weight: 400;
+    opacity: 0.7;
+}
+
+/* ============================= */
+/* LOGIN BUTTON */
+/* ============================= */
+.btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, var(--lesotho-blue) 0%, var(--lesotho-blue-dark) 100%);
+    color: var(--lesotho-white);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 82, 155, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 82, 155, 0.4);
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-primary span:last-child {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover span:last-child {
+    transform: translateX(4px);
+}
+
+/* ============================= */
+/* LOGIN LINKS */
+/* ============================= */
+.login-links {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+}
+
+.login-links p {
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.login-links a {
+    color: var(--lesotho-blue);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+    border-bottom: 1px solid transparent;
+}
+
+.login-links a:hover {
+    color: var(--lesotho-blue-dark);
+    border-bottom-color: var(--lesotho-blue);
+}
+
+.staff-notice {
+    margin-top: 20px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border-left: 4px solid var(--lesotho-blue);
+}
+
+.staff-notice small {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* ============================= */
+/* INFO SIDEBAR (RIGHT SIDE) */
+/* ============================= */
+.info-sidebar {
+    flex: 0.9;
+    background: linear-gradient(160deg, rgba(0, 61, 165, 0.95) 0%, rgba(0, 42, 117, 0.98) 100%);
+    backdrop-filter: blur(10px);
+    padding: 48px 32px;
+    color: var(--lesotho-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.info-sidebar::before {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* ============================= */
+/* INFO CARDS */
+/* ============================= */
+.info-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.info-card h4 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-card p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.info-card small {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+}
+
+/* Status Online Badge */
+.status-online {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(40, 167, 69, 0.2);
+    border: 1px solid rgba(40, 167, 69, 0.4);
+    border-radius: 30px;
+    padding: 4px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #6effb0;
+}
+
+.status-online::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #6effb0;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #6effb0;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Role Items */
+.role-item {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.role-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.role-item h5 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--lesotho-white);
+    margin-bottom: 4px;
+}
+
+.role-item p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0;
+}
+
+/* ============================= */
+/* RESPONSIVE DESIGN */
+/* ============================= */
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+        max-width: 500px;
+        margin: 16px;
+    }
+
+    .login-card {
+        padding: 36px 28px;
+    }
+
+    .info-sidebar {
+        padding: 36px 28px;
+    }
+
+    .card-header h3 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        margin: 12px;
+        width: calc(100% - 24px);
+    }
+
+    .login-card {
+        padding: 28px 20px;
+    }
+
+    .card-header h3 {
+        font-size: 24px;
+    }
+
+    .btn-primary {
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+
+    .info-card {
+        padding: 18px;
+    }
+}
+
+/* ============================= */
+/* ACCESSIBILITY */
+/* ============================= */
+:focus-visible {
+    outline: 3px solid var(--lesotho-green);
+    outline-offset: 2px;
+}
+
+/* ============================= */
+/* REDUCED MOTION */
+/* ============================= */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

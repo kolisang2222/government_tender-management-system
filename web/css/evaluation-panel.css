@@ -1,0 +1,268 @@
+/* Evaluation Panel Styles */
+
+.progress-status-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border: 1px solid #e9ecef;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.progress-label {
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.progress-value {
+    color: #00529B;
+    font-weight: 600;
+}
+
+.progress-bar-container {
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #00529B, #009A44);
+    border-radius: 4px;
+    transition: width 0.3s;
+}
+
+.visibility-notice {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: #fff3cd;
+    border-radius: 8px;
+    color: #856404;
+    font-size: 14px;
+}
+
+.bids-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.bid-evaluation-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border: 1px solid #e9ecef;
+}
+
+.bid-evaluation-card.scored {
+    border-left: 4px solid #28a745;
+}
+
+.bid-evaluation-card.pending {
+    border-left: 4px solid #ffc107;
+}
+
+.bid-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.bid-header h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: #1a1a2e;
+}
+
+.bid-meta {
+    display: flex;
+    gap: 20px;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.scored-badge {
+    padding: 4px 12px;
+    background: #d4edda;
+    color: #155724;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.technical-statement {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.technical-statement h4 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: #495057;
+}
+
+.technical-statement p {
+    margin: 0;
+    line-height: 1.6;
+    color: #1a1a2e;
+}
+
+.auto-scores, .my-score, .other-scores, .scoring-form {
+    margin-bottom: 20px;
+}
+
+.auto-scores h4, .my-score h4, .other-scores h4, .scoring-form h4 {
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: #495057;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.scores-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.score-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.score-item.highlight {
+    background: #e6f0fa;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.score-label {
+    font-size: 12px;
+    color: #6c757d;
+    margin-bottom: 4px;
+}
+
+.score-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.scoring-form .form-group {
+    margin-bottom: 16px;
+}
+
+.scoring-form label {
+    display: block;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+}
+
+.scoring-form input {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px 12px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.scoring-form input:focus {
+    outline: none;
+    border-color: #00529B;
+}
+
+.scores-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+}
+
+.scores-table th {
+    text-align: left;
+    padding: 10px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.scores-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.scores-table tr.current-user {
+    background: #e6f0fa;
+    font-weight: 500;
+}
+
+.average-score {
+    text-align: right;
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.hidden-scores-message {
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: #00529B;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #003d73;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #6c757d;
+}
+
+@media (max-width: 768px) {
+    .scores-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .bid-meta {
+        flex-direction: column;
+        gap: 4px;
+    }
+}

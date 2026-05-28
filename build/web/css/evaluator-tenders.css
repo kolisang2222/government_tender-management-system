@@ -1,0 +1,1103 @@
+/* ============================================================
+   ProcureGov — Evaluator Assigned Tenders Stylesheet
+   Ministry of Public Works, Kingdom of Lesotho
+   Enhanced Premium Glassmorphism Design
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
+
+/* ============================= */
+/* PREMIUM TOKENS */
+/* ============================= */
+:root {
+    /* Primary Colors */
+    --primary-blue: rgba(26, 58, 95, 0.85);
+    --primary-dark: #0f172a;
+    --primary-light: #1a3a5f;
+    
+    /* Gold Accents */
+    --accent-gold: #fbbf24;
+    --accent-gold-hover: #f59e0b;
+    --accent-gold-light: #fde047;
+    
+    /* Lesotho Green */
+    --green: #009A44;
+    --green-dark: #00592A;
+    --green-light: #e8f5ee;
+    
+    /* Text Colors */
+    --text-dark: #0f172a;
+    --text-light: #e2e8f0;
+    --text-muted: #64748b;
+    
+    /* Backgrounds */
+    --glass-white: rgba(255, 255, 255, 0.55);
+    --glass-lighter: rgba(255, 255, 255, 0.4);
+    
+    /* Shadows */
+    --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.15);
+    --shadow-medium: 0 15px 50px rgba(0, 0, 0, 0.2);
+    --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.25);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================= */
+/* MAIN LAYOUT */
+/* ============================= */
+.dashboard-layout {
+    display: flex;
+    min-height: calc(100vh - 80px);
+    margin-top: 80px;
+}
+
+.dashboard-main {
+    flex: 1;
+    padding: 2.5rem 2.5rem 4rem;
+    max-width: 1400px;
+    width: 100%;
+    animation: pageLoad 0.6s ease-out forwards;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================= */
+/* PAGE HEADER */
+/* ============================= */
+.page-header {
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-left h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header-left p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin: 0;
+}
+
+/* ============================= */
+/* ALERTS - PREMIUM */
+/* ============================= */
+.alert {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.2rem;
+    animation: slideInAlert 0.5s ease-out;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes slideInAlert {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.alert span:first-child {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    min-width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+}
+
+.alert span:last-child {
+    flex: 1;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.18) 0%, rgba(16, 185, 129, 0.08) 100%);
+    border-color: rgba(16, 185, 129, 0.4);
+    color: #047857;
+}
+
+.alert-success span:first-child {
+    background: rgba(16, 185, 129, 0.2);
+    color: #047857;
+}
+
+.alert-error {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.18) 0%, rgba(239, 68, 68, 0.08) 100%);
+    border-color: rgba(239, 68, 68, 0.4);
+    color: #991b1b;
+}
+
+.alert-error span:first-child {
+    background: rgba(239, 68, 68, 0.2);
+    color: #991b1b;
+}
+
+.close-alert {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+    padding: 0;
+    margin-left: auto;
+}
+
+.close-alert:hover {
+    opacity: 1;
+}
+
+/* ============================= */
+/* EVALUATOR TABS - PREMIUM */
+/* ============================= */
+.evaluator-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6),
+                0 12px 40px rgba(0, 0, 0, 0.12);
+    flex-wrap: wrap;
+    animation: tabsSlideIn 0.6s ease-out 0.1s forwards;
+    opacity: 0;
+}
+
+@keyframes tabsSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    padding: 0.9rem 1.6rem;
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+    position: relative;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+}
+
+.tab-link:hover {
+    color: var(--text-dark);
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.tab-link.active {
+    background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary-blue) 100%);
+    color: white;
+    box-shadow: 0 8px 20px rgba(26, 58, 95, 0.35);
+}
+
+.tab-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    border-radius: 14px;
+    pointer-events: none;
+}
+
+.tab-link:hover::before {
+    transform: translateX(100%);
+}
+
+.tab-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 0.4rem;
+    background: rgba(251, 191, 36, 0.25);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--accent-gold);
+}
+
+.tab-link.active .tab-count {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+/* ============================= */
+/* TAB CONTENT */
+/* ============================= */
+.tab-content {
+    display: none;
+    animation: contentFadeIn 0.4s ease-out forwards;
+}
+
+@keyframes contentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ============================= */
+/* TENDER CARDS GRID */
+/* ============================= */
+.tender-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* ============================= */
+/* TENDER CARD - PREMIUM */
+/* ============================= */
+.tender-card {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.7),
+                0 12px 40px rgba(0, 0, 0, 0.15);
+    transition: all var(--transition-smooth);
+    animation: cardSlideIn 0.5s ease-out both;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes cardSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.tender-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.8),
+                0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.tender-card.completed {
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+/* ============================= */
+/* CARD HEADER */
+/* ============================= */
+.card-header {
+    padding: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.tender-info {
+    flex: 1;
+}
+
+.ref-number {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    background: rgba(26, 58, 95, 0.08);
+    border: 1px solid rgba(26, 58, 95, 0.2);
+    padding: 0.35rem 0.65rem;
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.4px;
+}
+
+.tender-info h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.tender-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+/* ============================= */
+/* BADGES */
+/* ============================= */
+.category-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    background: rgba(26, 58, 95, 0.08);
+    border: 1px solid rgba(26, 58, 95, 0.2);
+    padding: 0.35rem 0.7rem;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.35rem 0.8rem;
+    border-radius: 12px;
+    border: 1.5px solid transparent;
+    white-space: nowrap;
+}
+
+.status-badge.status-under_evaluation {
+    background: #fef7e8;
+    color: #7a4b0a;
+    border-color: #f0c878;
+}
+
+.status-badge.status-closed {
+    background: #fdf2f2;
+    color: #8b2020;
+    border-color: #f0aaaa;
+}
+
+.completion-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 1rem;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.08) 100%);
+    border: 1.5px solid rgba(16, 185, 129, 0.3);
+    border-radius: 12px;
+    color: #047857;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+/* ============================= */
+/* BID SUMMARY & STATS */
+/* ============================= */
+.bid-summary,
+.progress-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.bid-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--accent-gold);
+    line-height: 1;
+    font-family: 'DM Mono', monospace;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* ============================= */
+/* PROGRESS INDICATOR */
+/* ============================= */
+.progress-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(251, 191, 36, 0.08) 100%);
+    border: 3px solid rgba(251, 191, 36, 0.3);
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+}
+
+.progress-text {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--accent-gold);
+    font-family: 'DM Mono', monospace;
+}
+
+/* ============================= */
+/* COMPLETION ICON */
+/* ============================= */
+.completion-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.08) 100%);
+    border: 2px solid rgba(16, 185, 129, 0.3);
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: #047857;
+}
+
+/* ============================= */
+/* CARD BODY */
+/* ============================= */
+.card-body {
+    padding: 1.5rem 2rem;
+    flex: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.tender-description {
+    margin-bottom: 1.5rem;
+}
+
+.tender-description p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.tender-dates {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.date-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.date-label {
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+}
+
+.date-value {
+    font-weight: 700;
+    color: var(--text-dark);
+    font-family: 'DM Mono', monospace;
+}
+
+/* ============================= */
+/* PROGRESS SECTION */
+/* ============================= */
+.progress-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.progress-label span:first-child {
+    font-weight: 800;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.progress-label span:last-child {
+    font-weight: 700;
+    color: var(--accent-gold);
+    font-family: 'DM Mono', monospace;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-hover));
+    border-radius: 12px;
+    transition: width 0.6s ease;
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
+}
+
+/* ============================= */
+/* COMPLETION DETAILS */
+/* ============================= */
+.completion-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.detail-label {
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.detail-value {
+    font-weight: 700;
+    color: var(--text-dark);
+    font-family: 'DM Mono', monospace;
+}
+
+.detail-value.highlight {
+    color: var(--green);
+}
+
+.detail-value.amount {
+    color: var(--accent-gold);
+    font-size: 1rem;
+}
+
+/* ============================= */
+/* CARD FOOTER */
+/* ============================= */
+.card-footer {
+    padding: 1.5rem 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* ============================= */
+/* BUTTONS - PREMIUM */
+/* ============================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all var(--transition-normal);
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-hover) 100%);
+    color: var(--primary-dark);
+    box-shadow: 0 8px 20px rgba(251, 191, 36, 0.3);
+    flex: 1;
+    min-width: 130px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(251, 191, 36, 0.4);
+}
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.3);
+    color: var(--text-dark);
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* ============================= */
+/* EMPTY STATE */
+/* ============================= */
+.empty-state {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    animation: emptyFadeIn 0.5s ease-out;
+}
+
+@keyframes emptyFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.empty-icon {
+    font-size: 3.5rem;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(251, 191, 36, 0.08) 100%);
+    border: 2px dashed rgba(251, 191, 36, 0.3);
+    border-radius: 50%;
+    font-weight: 900;
+    color: var(--accent-gold);
+}
+
+.empty-state h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.empty-state p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin: 0;
+    max-width: 340px;
+}
+
+/* ============================= */
+/* RESPONSIVE DESIGN */
+/* ============================= */
+@media (max-width: 1200px) {
+    .dashboard-main {
+        padding: 2rem 2rem 3.5rem;
+    }
+
+    .tender-cards {
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .card-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .bid-summary,
+    .progress-indicator {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 1024px) {
+    .dashboard-main {
+        padding: 1.5rem 1.5rem 3rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .evaluator-tabs {
+        padding: 0.8rem;
+    }
+
+    .tab-link {
+        padding: 0.8rem 1.3rem;
+        font-size: 0.85rem;
+    }
+
+    .tender-cards {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.3rem;
+    }
+
+    .card-header {
+        padding: 1.5rem;
+    }
+
+    .tender-info h3 {
+        font-size: 1rem;
+    }
+
+    .stat-value {
+        font-size: 1.6rem;
+    }
+
+    .progress-circle {
+        width: 70px;
+        height: 70px;
+    }
+
+    .progress-text {
+        font-size: 1.1rem;
+    }
+
+    .card-body {
+        padding: 1.2rem 1.5rem;
+    }
+
+    .card-footer {
+        padding: 1.2rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-main {
+        padding: 1.2rem 1rem 2.5rem;
+    }
+
+    .page-header {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .evaluator-tabs {
+        flex-wrap: wrap;
+        padding: 0.6rem;
+        gap: 0.5rem;
+    }
+
+    .tab-link {
+        flex: 0 1 calc(50% - 0.25rem);
+        padding: 0.7rem 1rem;
+        font-size: 0.8rem;
+        justify-content: center;
+    }
+
+    .tab-count {
+        display: none;
+    }
+
+    .tender-cards {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .card-header {
+        padding: 1.3rem;
+        gap: 0.8rem;
+    }
+
+    .tender-info h3 {
+        font-size: 0.95rem;
+    }
+
+    .stat-value {
+        font-size: 1.4rem;
+    }
+
+    .progress-circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .progress-text {
+        font-size: 1rem;
+    }
+
+    .card-footer {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-main {
+        padding: 1rem 0.75rem 2rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.2rem;
+    }
+
+    .evaluator-tabs {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .tab-link {
+        width: 100%;
+        flex: 1;
+        font-size: 0.75rem;
+        padding: 0.65rem 1rem;
+    }
+
+    .tender-cards {
+        gap: 1rem;
+    }
+
+    .card-header {
+        padding: 1rem;
+        gap: 0.6rem;
+    }
+
+    .ref-number {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .tender-info h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .tender-meta {
+        gap: 0.5rem;
+    }
+
+    .category-badge {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .stat-value {
+        font-size: 1.2rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+    }
+
+    .progress-circle {
+        width: 55px;
+        height: 55px;
+    }
+
+    .completion-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .card-footer {
+        padding: 1rem;
+        gap: 0.8rem;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 0.75rem 1.2rem;
+    }
+
+    .empty-state {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .empty-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 3rem;
+    }
+
+    .empty-state h3 {
+        font-size: 1.1rem;
+    }
+
+    .empty-state p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================= */
+/* DARK MODE SUPPORT */
+/* ============================= */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(26, 58, 95, 0.5) 100%),
+                    url('../images/websitebackground.png') no-repeat center center fixed;
+    }
+
+    .evaluator-tabs,
+    .tender-card,
+    .empty-state {
+        background: rgba(30, 41, 59, 0.55);
+    }
+
+    .card-header,
+    .card-body {
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .tab-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .ref-number {
+        background: rgba(26, 58, 95, 0.15);
+        border-color: rgba(26, 58, 95, 0.3);
+    }
+
+    .category-badge {
+        background: rgba(26, 58, 95, 0.15);
+        border-color: rgba(26, 58, 95, 0.3);
+    }
+
+    .detail-row {
+        background: rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* ============================= */
+/* REDUCED MOTION */
+/* ============================= */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

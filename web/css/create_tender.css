@@ -1,0 +1,590 @@
+/* ============================================================
+   PROCUREGOV CREATE TENDER STYLES
+   Ministry of Public Works, Kingdom of Lesotho
+   ============================================================ */
+
+:root {
+    --primary-blue: #00529B;
+    --primary-dark: #003d73;
+    --primary-light: #e6f0fa;
+    --lesotho-green: #009A44;
+    --lesotho-white: #FFFFFF;
+    --text-dark: #1a1a2e;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --border-light: #e2e8f0;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --success-green: #28a745;
+    --warning-orange: #ffc107;
+    --danger-red: #dc3545;
+}
+
+/* ============================================================
+   FORM CARD
+   ============================================================ */
+.form-card {
+    background: var(--lesotho-white);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.form-card-header {
+    padding: 24px 28px;
+    background: linear-gradient(to right, #fafbfc, var(--lesotho-white));
+    border-bottom: 1px solid var(--border-light);
+}
+
+.form-card-header h2 {
+    margin: 0 0 6px;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.form-card-header p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.required {
+    color: var(--danger-red);
+    font-weight: 600;
+}
+
+/* ============================================================
+   FORM SECTIONS
+   ============================================================ */
+.form-section {
+    border: none;
+    padding: 24px 28px;
+    margin: 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+}
+
+.form-section legend {
+    font-weight: 700;
+    color: var(--primary-blue);
+    padding: 0 12px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    width: auto;
+}
+
+/* ============================================================
+   FORM ROWS & GROUPS
+   ============================================================ */
+.form-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.form-row:last-child {
+    margin-bottom: 0;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 0;
+}
+
+.form-group.full-width {
+    flex: 0 0 100%;
+}
+
+.form-group.half-width {
+    flex: 0 0 calc(50% - 12px);
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+/* ============================================================
+   INPUT WRAPPER
+   ============================================================ */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.currency-prefix {
+    position: absolute;
+    left: 16px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.input-wrapper input,
+.input-wrapper select,
+.input-wrapper textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid var(--border-light);
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--text-dark);
+    background: var(--lesotho-white);
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.input-wrapper input[readonly],
+.input-wrapper input[readonly]:focus {
+    background: #f8fafc;
+    color: var(--text-muted);
+    cursor: not-allowed;
+    border-color: var(--border-light);
+}
+
+.input-wrapper .currency-prefix + input {
+    padding-left: 38px;
+}
+
+.input-wrapper input:hover,
+.input-wrapper select:hover,
+.input-wrapper textarea:hover {
+    border-color: #cbd5e0;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus,
+.input-wrapper textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 82, 155, 0.1);
+}
+
+.input-wrapper textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.input-error {
+    border-color: var(--danger-red) !important;
+}
+
+/* ============================================================
+   FIELD HINTS & ERRORS
+   ============================================================ */
+.field-hint {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.error-message {
+    display: none;
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--danger-red);
+    font-weight: 500;
+}
+
+/* ============================================================
+   DATETIME PREVIEW
+   ============================================================ */
+.datetime-preview {
+    background: #f8fafc;
+    padding: 14px 18px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-light);
+}
+
+#previewText {
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* ============================================================
+   FILE UPLOAD AREA
+   ============================================================ */
+.file-upload-area {
+    border: 2px dashed var(--border-light);
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fafbfc;
+}
+
+.file-upload-area:hover,
+.file-upload-area.dragover {
+    border-color: var(--primary-blue);
+    background: var(--primary-light);
+}
+
+.file-upload-text {
+    margin: 8px 0;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.file-upload-hint {
+    margin: 8px 0 16px;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* ============================================================
+   SELECTED FILE DISPLAY
+   ============================================================ */
+.selected-file {
+    background: #f8fafc;
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.file-name {
+    flex: 1;
+    font-weight: 500;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.file-size {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.remove-file {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--danger-red);
+    padding: 4px 10px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.remove-file:hover {
+    background: #f8d7da;
+}
+
+/* ============================================================
+   CHECKBOX LABELS
+   ============================================================ */
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: var(--primary-blue);
+}
+
+.checkbox-text {
+    flex: 1;
+}
+
+.checkbox-text strong {
+    display: block;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+    font-size: 15px;
+}
+
+.checkbox-text small {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* ============================================================
+   FORM ACTIONS
+   ============================================================ */
+.form-actions {
+    display: flex;
+    gap: 16px;
+    padding: 24px 28px;
+    background: #fafbfc;
+    border-top: 1px solid var(--border-light);
+}
+
+/* ============================================================
+   INFO PANEL
+   ============================================================ */
+.info-panel {
+    background: var(--primary-light);
+    border-radius: 16px;
+    padding: 24px 28px;
+    border-left: 4px solid var(--primary-blue);
+    margin-top: 24px;
+}
+
+.info-panel h3 {
+    margin: 0 0 16px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-panel ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.info-panel li {
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.info-panel li strong {
+    color: var(--text-dark);
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-lg {
+    padding: 14px 28px;
+    font-size: 15px;
+}
+
+.btn-primary {
+    background: var(--primary-blue);
+    color: var(--lesotho-white);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 82, 155, 0.3);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    background: #e9ecef;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-light);
+}
+
+.btn-secondary:hover {
+    background: #dee2e6;
+}
+
+.btn-outline-secondary {
+    background: transparent;
+    border: 2px solid var(--border-light);
+    color: var(--text-secondary);
+}
+
+.btn-outline-secondary:hover {
+    background: #f8fafc;
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+/* ============================================================
+   ALERTS
+   ============================================================ */
+.alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-icon {
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-warning {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa9;
+}
+
+.alert ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+}
+
+.alert li {
+    margin-bottom: 4px;
+}
+
+.close-alert {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.6;
+    color: inherit;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-alert:hover {
+    opacity: 1;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+@media (max-width: 768px) {
+    .form-section {
+        padding: 18px 20px;
+    }
+
+    .form-card-header {
+        padding: 18px 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .form-group.half-width {
+        flex: 0 0 100%;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        padding: 18px 20px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .info-panel {
+        padding: 18px 20px;
+    }
+
+    .file-upload-area {
+        padding: 24px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-card-header h2 {
+        font-size: 20px;
+    }
+
+    .form-section legend {
+        font-size: 15px;
+    }
+
+    .checkbox-text strong {
+        font-size: 14px;
+    }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+    .form-actions,
+    .file-upload-area button,
+    .info-panel,
+    .alert .close-alert {
+        display: none !important;
+    }
+
+    .form-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+    .input-wrapper input,
+    .input-wrapper select,
+    .input-wrapper textarea {
+        border: 1px solid #ccc;
+        background: none;
+    }
+}

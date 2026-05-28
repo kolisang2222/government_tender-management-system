@@ -1,0 +1,854 @@
+/* ============================================================
+   PROCUREGOV TENDER DETAIL STYLES
+   Ministry of Public Works, Kingdom of Lesotho
+   ============================================================ */
+
+:root {
+    --primary-blue: #00529B;
+    --primary-dark: #003d73;
+    --primary-light: #e6f0fa;
+    --lesotho-green: #009A44;
+    --lesotho-white: #FFFFFF;
+    --text-dark: #1a1a2e;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --border-light: #e2e8f0;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --success-green: #28a745;
+    --warning-orange: #ffc107;
+    --danger-red: #dc3545;
+    --info-blue: #17a2b8;
+}
+
+/* ============================================================
+   BACK LINK
+   ============================================================ */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    transition: all 0.2s ease;
+}
+
+.back-link::before {
+    content: '←';
+    font-size: 16px;
+}
+
+.back-link:hover {
+    color: var(--primary-blue);
+    transform: translateX(-2px);
+}
+
+/* ============================================================
+   BID STATUS BANNER
+   ============================================================ */
+.bid-status-banner {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    border-left: 5px solid var(--success-green);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--shadow-sm);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.banner-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--success-green);
+    color: var(--lesotho-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    flex-shrink: 0;
+}
+
+.banner-content {
+    flex: 1;
+}
+
+.banner-content strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #155724;
+    font-size: 16px;
+}
+
+.banner-content p {
+    margin: 0;
+    color: #155724;
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+.btn-outline-light {
+    background: transparent;
+    border: 2px solid var(--success-green);
+    color: #155724;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-light:hover {
+    background: var(--success-green);
+    color: var(--lesotho-white);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+/* ============================================================
+   TENDER HEADER CARD
+   ============================================================ */
+.tender-header-card {
+    background: var(--lesotho-white);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    transition: box-shadow 0.2s ease;
+}
+
+.tender-header-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.ref-number {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-draft {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.status-open {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-closed {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-under_evaluation {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.status-evaluated {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.status-awarded {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.tender-header-card h2 {
+    margin: 0 0 16px;
+    font-size: 28px;
+    color: var(--text-dark);
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.header-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.category-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: #f1f5f9;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.estimated-value {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ============================================================
+   ACTION BAR
+   ============================================================ */
+.action-bar {
+    background: var(--lesotho-white);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.deadline-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.deadline-label {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.deadline-value {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.time-remaining {
+    padding: 4px 14px;
+    background: #f8fafc;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-light);
+}
+
+.time-remaining.urgent {
+    background: #f8d7da;
+    color: #721c24;
+    border-color: var(--danger-red);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+/* ============================================================
+   DETAILS GRID
+   ============================================================ */
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.details-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.detail-card {
+    background: var(--lesotho-white);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    transition: box-shadow 0.2s ease;
+}
+
+.detail-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.detail-card h3 {
+    margin: 0 0 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detail-card h3::before {
+    content: '▎';
+    color: var(--primary-blue);
+    font-size: 20px;
+}
+
+.description-content {
+    line-height: 1.8;
+    color: var(--text-secondary);
+    white-space: pre-wrap;
+    font-size: 14px;
+}
+
+.requirements-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.requirements-list li {
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.requirements-list li::marker {
+    color: var(--primary-blue);
+}
+
+/* ============================================================
+   INFO TABLE
+   ============================================================ */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table tr {
+    border-bottom: 1px solid var(--border-light);
+}
+
+.info-table tr:last-child {
+    border-bottom: none;
+}
+
+.info-table td {
+    padding: 14px 0;
+}
+
+.info-label {
+    font-weight: 600;
+    color: var(--text-muted);
+    width: 40%;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.info-value {
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.info-value.urgent {
+    color: var(--danger-red);
+    font-weight: 600;
+}
+
+/* ============================================================
+   TIMELINE
+   ============================================================ */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.timeline-marker {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-top: 5px;
+    position: relative;
+}
+
+.timeline-marker.published {
+    background: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 82, 155, 0.2);
+}
+
+.timeline-marker.closing {
+    background: var(--warning-orange);
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2);
+}
+
+.timeline-marker.awarded {
+    background: var(--success-green);
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
+}
+
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.timeline-title {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.timeline-date {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* ============================================================
+   CONTACT INFO
+   ============================================================ */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+}
+
+.contact-label {
+    font-weight: 600;
+    color: var(--text-muted);
+    width: 100px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.contact-value {
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* ============================================================
+   AWARD CARD
+   ============================================================ */
+.award-card {
+    background: linear-gradient(135deg, #f0fff4, var(--lesotho-white));
+    border: 2px solid var(--success-green);
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.award-card h3 {
+    margin: 0 0 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #155724;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.award-card h3::before {
+    content: '🏆';
+    font-size: 20px;
+}
+
+.award-details {
+    display: grid;
+    gap: 16px;
+}
+
+.award-item {
+    display: flex;
+    align-items: baseline;
+}
+
+.award-label {
+    font-weight: 600;
+    color: var(--text-muted);
+    width: 150px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.award-value {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.award-value.highlight {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.award-value.amount {
+    color: var(--success-green);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.award-justification {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #c3e6cb;
+}
+
+.award-justification p {
+    margin: 8px 0 0;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+/* ============================================================
+   ERROR CARD
+   ============================================================ */
+.error-card {
+    background: var(--lesotho-white);
+    border-radius: 16px;
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+}
+
+.error-icon {
+    width: 72px;
+    height: 72px;
+    background: #f8d7da;
+    color: #721c24;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 auto 24px;
+}
+
+.error-card h3 {
+    margin: 0 0 8px;
+    color: var(--text-dark);
+    font-size: 22px;
+}
+
+.error-card p {
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-lg {
+    padding: 14px 28px;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background: var(--primary-blue);
+    color: var(--lesotho-white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 82, 155, 0.3);
+}
+
+.btn-secondary {
+    background: #e9ecef;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-light);
+}
+
+.btn-secondary:hover {
+    background: #dee2e6;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--border-light);
+    color: var(--text-secondary);
+}
+
+.btn-outline:hover {
+    background: #f8fafc;
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ============================================================
+   ALERTS
+   ============================================================ */
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.close-alert {
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.6;
+    color: inherit;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.close-alert:hover {
+    opacity: 1;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+@media (max-width: 1024px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tender-header-card h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .action-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .tender-header-card {
+        padding: 20px;
+    }
+
+    .tender-header-card h2 {
+        font-size: 20px;
+    }
+
+    .bid-status-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .detail-card {
+        padding: 18px;
+    }
+
+    .award-item {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .award-label {
+        width: 100%;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .contact-label {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .header-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .deadline-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .info-label {
+        width: 50%;
+    }
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.tender-header-card,
+.detail-card,
+.award-card {
+    animation: fadeIn 0.4s ease;
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+    .action-bar,
+    .action-buttons,
+    .back-link,
+    .alert,
+    .bid-status-banner .btn-outline-light {
+        display: none !important;
+    }
+
+    .tender-header-card,
+    .detail-card,
+    .award-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+    }
+
+    .status-badge {
+        border: 1px solid #000;
+    }
+}

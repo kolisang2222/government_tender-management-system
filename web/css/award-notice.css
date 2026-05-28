@@ -1,0 +1,456 @@
+/* ============================================================
+   PROCUREGOV AWARD TENDER STYLES
+   Ministry of Public Works, Kingdom of Lesotho
+   ============================================================ */
+
+:root {
+    --primary-blue: #00529B;
+    --primary-dark: #003d73;
+    --primary-light: #e6f0fa;
+    --lesotho-green: #009A44;
+    --lesotho-white: #FFFFFF;
+    --text-dark: #1a1a2e;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --border-light: #e2e8f0;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --success-green: #28a745;
+    --warning-orange: #ffc107;
+    --danger-red: #dc3545;
+    --gold: #ffd700;
+}
+
+/* ============================================================
+   BACK LINK
+   ============================================================ */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    transition: all 0.2s ease;
+}
+
+.back-link::before {
+    content: '←';
+    font-size: 16px;
+}
+
+.back-link:hover {
+    color: var(--primary-blue);
+    transform: translateX(-2px);
+}
+
+/* ============================================================
+   SUMMARY CARD
+   ============================================================ */
+.summary-card {
+    background: var(--lesotho-white);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+}
+
+.summary-card h2 {
+    margin: 0 0 16px;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.3;
+}
+
+.summary-details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.ref-number {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    background: var(--primary-light);
+    border-radius: 20px;
+}
+
+.category {
+    display: inline-block;
+    padding: 6px 14px;
+    background: #f1f5f9;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.estimated-value {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: auto;
+}
+
+/* ============================================================
+   BIDS SECTION
+   ============================================================ */
+.bids-section {
+    background: var(--lesotho-white);
+    border-radius: 16px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+}
+
+.bids-section h3 {
+    margin: 0 0 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bids-section h3::before {
+    content: '▎';
+    color: var(--primary-blue);
+    font-size: 20px;
+}
+
+/* ============================================================
+   BIDS TABLE
+   ============================================================ */
+.bids-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 28px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.bids-table thead {
+    background: linear-gradient(to right, #fafbfc, var(--lesotho-white));
+    border-bottom: 2px solid var(--border-light);
+}
+
+.bids-table th {
+    padding: 16px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.bids-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.bids-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.bids-table tbody tr:hover {
+    background: #fafbfc;
+}
+
+.bids-table tbody tr.top-ranked {
+    background: rgba(255, 215, 0, 0.06);
+    border-left: 4px solid var(--gold);
+}
+
+/* Radio Button Styling */
+.bids-table input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-blue);
+    cursor: pointer;
+}
+
+/* ============================================================
+   AWARD SECTION
+   ============================================================ */
+.award-section {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border-light);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.required {
+    color: var(--danger-red);
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.currency-symbol {
+    position: absolute;
+    left: 16px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.input-wrapper input {
+    width: 100%;
+    max-width: 400px;
+    padding: 14px 16px 14px 42px;
+    border: 2px solid var(--border-light);
+    border-radius: 10px;
+    font-size: 15px;
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 82, 155, 0.1);
+}
+
+textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 14px 16px;
+    border: 2px solid var(--border-light);
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 120px;
+    transition: all 0.2s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 82, 155, 0.1);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* ============================================================
+   WARNING BOX
+   ============================================================ */
+.warning-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: #fff3cd;
+    border: 1px solid var(--warning-orange);
+    border-radius: 10px;
+    color: #856404;
+    font-size: 14px;
+    margin: 24px 0;
+}
+
+.warning-box span:first-child {
+    font-size: 20px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   FORM ACTIONS
+   ============================================================ */
+.form-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 28px;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary-blue);
+    color: var(--lesotho-white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 82, 155, 0.3);
+}
+
+.btn-secondary {
+    background: #e9ecef;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-light);
+}
+
+.btn-secondary:hover {
+    background: #dee2e6;
+}
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+/* ============================================================
+   ALERTS
+   ============================================================ */
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+@media (max-width: 768px) {
+    .summary-card,
+    .bids-section {
+        padding: 18px 20px;
+    }
+
+    .summary-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .estimated-value {
+        margin-left: 0;
+    }
+
+    .bids-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .input-wrapper input,
+    textarea {
+        max-width: 100%;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .summary-card h2 {
+        font-size: 18px;
+    }
+
+    .bids-section h3 {
+        font-size: 16px;
+    }
+
+    .bids-table th,
+    .bids-table td {
+        padding: 12px 10px;
+        font-size: 13px;
+    }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+    .form-actions,
+    .warning-box,
+    .bids-table input[type="radio"],
+    .back-link {
+        display: none !important;
+    }
+
+    .summary-card,
+    .bids-section {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+    .bids-table tbody tr.top-ranked {
+        background: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}

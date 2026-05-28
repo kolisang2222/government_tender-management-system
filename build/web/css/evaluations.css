@@ -1,0 +1,638 @@
+/* ============================================================
+   PROCUREGOV EVALUATIONS STYLES
+   Ministry of Public Works, Kingdom of Lesotho
+   ============================================================ */
+
+:root {
+    --primary-blue: #00529B;
+    --primary-dark: #003d73;
+    --primary-light: #e6f0fa;
+    --lesotho-green: #009A44;
+    --lesotho-white: #FFFFFF;
+    --text-dark: #1a1a2e;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --border-light: #e2e8f0;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --success-green: #28a745;
+    --warning-orange: #ffc107;
+    --danger-red: #dc3545;
+    --info-blue: #17a2b8;
+}
+
+/* ============================================================
+   EVALUATION TABS
+   ============================================================ */
+.evaluation-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 28px;
+    border-bottom: 2px solid var(--border-light);
+    padding-bottom: 2px;
+    flex-wrap: wrap;
+}
+
+.tab-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 10px 10px 0 0;
+    transition: all 0.2s ease;
+    position: relative;
+    background: transparent;
+}
+
+.tab-link:hover {
+    background: #f8fafc;
+    color: var(--primary-blue);
+}
+
+.tab-link.active {
+    color: var(--primary-blue);
+    background: var(--lesotho-white);
+    border: 1px solid var(--border-light);
+    border-bottom-color: var(--lesotho-white);
+    margin-bottom: -2px;
+}
+
+.tab-link.active::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--primary-blue);
+    border-radius: 3px 3px 0 0;
+}
+
+.tab-count {
+    background: var(--border-light);
+    color: var(--text-secondary);
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 6px;
+    transition: all 0.2s ease;
+}
+
+.tab-link.active .tab-count {
+    background: var(--primary-blue);
+    color: var(--lesotho-white);
+}
+
+/* ============================================================
+   TAB CONTENT
+   ============================================================ */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   EVALUATION CARDS
+   ============================================================ */
+.evaluation-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.evaluation-card {
+    background: var(--lesotho-white);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.evaluation-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-blue);
+}
+
+.evaluation-card.completed {
+    border-left: 5px solid var(--success-green);
+}
+
+/* ============================================================
+   CARD HEADER
+   ============================================================ */
+.card-header {
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--border-light);
+    background: linear-gradient(to right, #fafbfc, var(--lesotho-white));
+}
+
+.tender-info {
+    flex: 1;
+}
+
+.ref-number {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tender-info h3 {
+    margin: 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.4;
+}
+
+.tender-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.category-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #f1f5f9;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.closing-info {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-evaluated {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.status-awarded {
+    background: #d4edda;
+    color: #155724;
+}
+
+/* ============================================================
+   BID SUMMARY
+   ============================================================ */
+.bid-summary {
+    text-align: center;
+    padding-left: 20px;
+}
+
+.bid-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+/* ============================================================
+   PROGRESS SECTION
+   ============================================================ */
+.progress-info {
+    min-width: 200px;
+}
+
+.progress-stats {
+    text-align: right;
+}
+
+.progress-text {
+    display: block;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.progress-bar {
+    width: 160px;
+    height: 8px;
+    background: var(--border-light);
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-blue), var(--lesotho-green));
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.completion-badge {
+    background: #d4edda;
+    color: #155724;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ============================================================
+   EVALUATOR LIST
+   ============================================================ */
+.evaluator-list {
+    padding: 16px 24px;
+    background: #fafbfc;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.evaluator-list h4 {
+    margin: 0 0 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.evaluator-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.evaluator-item:last-child {
+    border-bottom: none;
+}
+
+.evaluator-name {
+    font-weight: 500;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.evaluator-status {
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.evaluator-status.completed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.evaluator-status.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* ============================================================
+   RANKED RESULTS
+   ============================================================ */
+.ranked-results {
+    padding: 16px 24px;
+}
+
+.ranked-results h4 {
+    margin: 0 0 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mini-rank-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.mini-rank-table th {
+    text-align: left;
+    padding: 10px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    border-bottom: 2px solid var(--border-light);
+}
+
+.mini-rank-table td {
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 13px;
+}
+
+.rank-1 {
+    background: rgba(255, 215, 0, 0.08);
+}
+
+.rank-2 {
+    background: rgba(192, 192, 192, 0.05);
+}
+
+.rank-3 {
+    background: rgba(205, 127, 50, 0.05);
+}
+
+/* ============================================================
+   CARD FOOTER
+   ============================================================ */
+.card-footer {
+    padding: 16px 24px;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    background: #fafbfc;
+    border-top: 1px solid var(--border-light);
+}
+
+/* ============================================================
+   EMPTY STATES
+   ============================================================ */
+.empty-tab {
+    text-align: center;
+    padding: 60px 40px;
+    background: var(--lesotho-white);
+    border-radius: 16px;
+    border: 1px solid var(--border-light);
+}
+
+.empty-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+.empty-tab p {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin: 0;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: var(--primary-blue);
+    color: var(--lesotho-white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 82, 155, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--border-light);
+    color: var(--text-secondary);
+}
+
+.btn-outline:hover {
+    background: #f8fafc;
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.btn-success {
+    background: var(--success-green);
+    color: var(--lesotho-white);
+}
+
+.btn-success:hover {
+    background: #218838;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+/* ============================================================
+   ALERTS
+   ============================================================ */
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.close-alert {
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.6;
+    color: inherit;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-alert:hover {
+    opacity: 1;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+@media (max-width: 768px) {
+    .evaluation-tabs {
+        flex-direction: column;
+        gap: 2px;
+    }
+    
+    .tab-link {
+        border-radius: 8px;
+        border: 1px solid var(--border-light);
+        margin-bottom: 4px;
+        justify-content: center;
+    }
+    
+    .tab-link.active {
+        margin-bottom: 0;
+    }
+    
+    .tab-link.active::before {
+        display: none;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .bid-summary {
+        padding-left: 0;
+        align-self: flex-start;
+    }
+    
+    .progress-info {
+        width: 100%;
+    }
+    
+    .progress-bar {
+        width: 100%;
+    }
+    
+    .card-footer {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .tender-meta {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .evaluation-card {
+        border-radius: 12px;
+    }
+    
+    .card-header {
+        padding: 16px;
+    }
+    
+    .evaluator-list,
+    .ranked-results,
+    .card-footer {
+        padding: 12px 16px;
+    }
+    
+    .tender-info h3 {
+        font-size: 16px;
+    }
+    
+    .stat-value {
+        font-size: 28px;
+    }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+    .evaluation-tabs,
+    .card-footer,
+    .alert,
+    .btn {
+        display: none !important;
+    }
+    
+    .tab-content {
+        display: block !important;
+    }
+    
+    .evaluation-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
